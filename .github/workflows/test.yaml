@@ -10,11 +10,17 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      # 安裝 Python 依賴（從 requirements.txt）
       - name: install requirements
         run: pip install -r requirements.txt
+
+      # 執行 pytest 測試，並生成覆蓋率報告（htmlcov 資料夾）和終端顯示報告，覆蓋範圍是 project 目錄下的程式碼
       - name: run py test
         run: pytest --cov-report html:htmlcov --cov-report term --cov=project tests
+
+      # 上傳測試報告（html 格式），供後續查看
       - name: upload test reports
         uses: actions/upload-artifact@v3
         with:
