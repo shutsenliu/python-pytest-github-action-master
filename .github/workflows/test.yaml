@@ -29,6 +29,8 @@ jobs:
   
   deploy:
     runs-on: ubuntu-22.04
+    # 等 test-code 結束，無論成功或失敗，都會執行
+    if: ${{ always() }}
     needs: test-code
     steps:
       - name: checkout code
