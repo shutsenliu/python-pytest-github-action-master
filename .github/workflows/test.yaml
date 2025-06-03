@@ -22,7 +22,7 @@ jobs:
 
       # 上傳測試報告（html 格式），供後續查看
       - name: upload test reports
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-report
           path: htmlcov/
