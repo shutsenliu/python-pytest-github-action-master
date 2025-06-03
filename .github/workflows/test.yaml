@@ -14,7 +14,7 @@ jobs:
 
       # 安裝 Python 依賴（從 requirements.txt）
       - name: install requirements
-        run: pip install -r requirements.txt
+        run: pip install -r requirements.txtt
 
       # 執行 pytest 測試，並生成覆蓋率報告（htmlcov 資料夾）和終端顯示報告，覆蓋範圍是 project 目錄下的程式碼
       - name: run py test
