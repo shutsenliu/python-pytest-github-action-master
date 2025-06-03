@@ -40,8 +40,8 @@ jobs:
         with:
           python-version: '3.9' 
 
-      - name: install requirements
-        run: pip install -r requirements.txt py39
+      - name: install requirements py39
+        run: pip install -r requirements.txt
 
       - name: run py test py39
         id: run-py-test-py39
