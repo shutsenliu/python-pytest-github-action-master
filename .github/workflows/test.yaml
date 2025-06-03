@@ -22,6 +22,7 @@ jobs:
 
       # 上傳測試報告（html 格式），供後續查看
       - name: upload test reports
+        if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: test-report
@@ -30,7 +31,7 @@ jobs:
   deploy:
     runs-on: ubuntu-22.04
     # 只會在 test-code 失敗時執行
-    if: ${{ failure() }}
+    if: failure()
     needs: test-code
     steps:
       - name: checkout code
